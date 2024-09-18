@@ -13,9 +13,11 @@ service GreetService{
     //request stream => return stream Hello response
 rpc sayHelloServerStreaming(NamesList)returns (stream HelloResponse);
 
-rpc sayHelloClientStreaming(stream HelloResponse)returns(MessagesList);
 
-rpc sayHelloBidirectionalStreaming (stream HelloResponse)returns(stream HelloResponse);
+rpc sayHelloClientStreaming(stream HelloRequest)returns(MessagesList);
+
+
+rpc sayHelloBidirectionalStreaming (stream HelloRequest)returns(stream HelloResponse);
 }
 
 
